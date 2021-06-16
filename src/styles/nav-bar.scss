@@ -1,0 +1,102 @@
+.nav-component-wrapper {
+    height: 117px;
+}
+
+.nav-wrapper {
+    background-color: rgb(255, 255, 255);
+    border-bottom: solid 3px cornflowerblue;
+    border-top: solid 3px cornflowerblue;
+    // box-shadow: inset 5px 5px 50px -6px #000000;
+    height: 100px;
+    margin-bottom: 10px;
+
+    .left-right-nav {
+        height: 20px;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        margin: 5px;
+    }
+}
+
+.title {
+    align-items: center;
+    height: 85px;
+    font-size: 4.0em;
+    color: turquoise;
+    filter: brightness(110%);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5, 0px 11px 13px rgba(25,67,81,0.44);
+
+    img {
+        padding-left: 90px;
+        height: 50px;
+        width: 24%;
+        filter: brightness(110%);
+    }
+
+    .elle-title {
+        display: flex;
+        justify-content: center;
+    }
+};
+
+img.two-bee, .four-bee, .six-bee {
+    padding-bottom: 20px;
+}
+
+img.one-bee, .three-bee, .five-bee {
+    padding-top: 20px;
+}
+
+.link-bar {
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+    font-size: 20px;
+    height: 30px;
+
+    .nav-link {
+        display: block;
+
+        a {
+            filter: brightness(110%);
+            text-decoration: none;
+            color: turquoise;
+            font-weight: 800;
+            transition: .5s ease-in-out;
+        }
+
+        a:hover {
+            color: white;
+            letter-spacing: .5px;
+        }
+
+    }
+};
+
+.right-side {
+    width: 200px;
+
+    .outside-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    a {
+        filter: brightness(110%);
+        font-size: 20px;  
+        display: block;
+        color: darkturquoise;
+        transition: .5s ease-in-out;
+    }
+
+    a:hover {
+        color: white;
+        font-size: 22px;
+    }
+}

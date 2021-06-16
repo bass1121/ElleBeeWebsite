@@ -1,0 +1,14 @@
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 10px;
+    align-items: center;
+
+    .about-image {
+        height: calc(100vh - 132px);
+    }
+
+    .about-text {
+        font-size: 20px;
+    }
+}

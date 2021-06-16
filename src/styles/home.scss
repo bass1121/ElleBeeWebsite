@@ -1,0 +1,39 @@
+.home-container {
+    display: flex;
+    justify-content: space-between;
+
+    .home-pic  img {
+        height: 400px;
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 3px solid cornflowerblue;
+    }
+
+    .text-container { 
+        width: 600px;
+    
+    
+        p {
+            line-height: 1;
+            color: #4086ce;
+            font-weight: 900;
+            font-size: 24px;        
+        }
+    }
+
+    .youtube-playlist {
+        height: 745px;
+        width: 400px;
+        border: 5px solid cornflowerblue;
+        border-radius: 5px;
+        margin-top: 10px;
+        overflow: auto;   
+    }
+
+}
+
+.right-side-home {
+    margin-right: 10px;
+}
