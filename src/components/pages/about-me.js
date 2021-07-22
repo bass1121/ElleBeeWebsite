@@ -1,13 +1,13 @@
 import React from "react";
 import { LoremIpsum } from "react-lorem-ipsum";
-import AboutImage from "../../images/leslie-about.jpg"
+import AboutPic from "../../images/leslie-about.jpg"
 
 
 export default function about() {
   return (
     <div className="about-container">
       <div className="about-image-container">
-        <img src={AboutImage} className="about-image" alt="Image Error" />
+        <img src={AboutPic} className="about-pic" alt="Error" />
       </div>
       <div className="about-text">
         <h1>Who is Elle Bee?</h1>
