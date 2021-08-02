@@ -27,9 +27,14 @@ export default class Home extends Component {
 
   activateInfiniteScroll() {
       window.onload = function() {
-        const container = document.getElementById("youtubePlaylist")
-        container.onscroll = () => {
-          console.log("onscroll");
+        var container = document.getElementById("youtubePlaylist")
+        container.onscroll = () => { 
+        if (
+          container.scrollTop + container.clientHeight ===
+          container.scrollHeight
+          ) {
+            console.log("get more videos");
+          }
       }
     }
   }
@@ -63,14 +68,6 @@ export default class Home extends Component {
     componentDidMount() {
       this.getYoutubePlaylist();
     }
-
-    
-
-
-
-
-
-
 
   render() {
     const renderPlaylist = (state) => {
