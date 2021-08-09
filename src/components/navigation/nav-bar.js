@@ -32,7 +32,7 @@ export default function navBar() {
         </div>
 
         <div className="nav-link">
-          <NavLink to="/news" activeClassName="nav-link-active">
+          <NavLink to="/news-blog" activeClassName="nav-link-active">
             News and Blog
           </NavLink>
         </div>

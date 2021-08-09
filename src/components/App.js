@@ -12,7 +12,7 @@ import {
 import NavComponent from "./navigation/nav-bar";
 import Home from "./pages/home";
 import About from "./pages/about-me";
-import News from "./pages/news";
+import News from "./pages/news-blog";
 import Support from "./pages/support-links";
 import Members from "./pages/members";
 import Merch from "./pages/merch";
@@ -34,7 +34,7 @@ export default class App extends Component {
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/about-me" component={About} />
-                <Route path="/news" component={News} />
+                <Route path="/news-blog" component={News} />
                 <Route path="/support-links" component={Support} />
                 <Route path="/members" component={Members} />
                 <Route path="/merch" component={Merch} />
