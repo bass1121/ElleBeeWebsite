@@ -73,7 +73,7 @@ export default class Home extends Component {
         if (
           container.scrollTop + container.clientHeight === container.scrollHeight
           ) {
-            this.getNextPage()
+            if(this.state.nextPageToken !== undefined ){this.getNextPage()};
           }
       }
     }
