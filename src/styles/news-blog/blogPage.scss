@@ -1,5 +1,12 @@
 .blog-page-wrapper {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-header {
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -15,11 +22,21 @@
     font-size: 70px;
     color: darkslategrey;
     text-decoration: underline;
+    margin: 10px;
 }
     
-
-
 .dark-bee-wrapper img {
-        height: 60px;
-    }
+    height: 120px;
+    margin-left: 5px;
+}
+
+.blog-posts {
+    border: 2px solid black;
+    width: 700px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: cornflowerblue;
+}
 

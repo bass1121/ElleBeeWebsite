@@ -5,20 +5,22 @@ import DarkBee from "../../images/darkslategreyBee.png";
 export default function news() {
   return (
     <div className="blog-page-wrapper">
-      <div className="drawing-wrapper">
-        <img src={ElleDrawing} alt="" />
-      </div>
-      <div className="blog-container-wrapper">
-        <div className="blog-page-title">
-          Latest Tea, Updates and Announcements
+      <div className="blog-header">
+        <div className="drawing-wrapper">
+          <img src={ElleDrawing} alt="" />
         </div>
-        
-        <div className="blog-wrapper">
-          
+        <div className="blog-container-wrapper">
+          <div className="blog-page-title">
+            Latest Tea, Updates and Announcements
+          </div>
+        </div>
+        <div className="dark-bee-wrapper">
+          <img src={DarkBee} alt="" />
         </div>
       </div>
-      <div className="dark-bee-wrapper">
-        <img src={DarkBee} alt="" />
+
+      <div className="blog-posts">
+        where the blog material will go
       </div>
     </div>
   );
