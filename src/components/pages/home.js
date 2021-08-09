@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import business from "../../images/business.png";
 import axios from "axios";
 import PlaylistItem from "../playlist/playlist-item"
@@ -16,58 +16,68 @@ export default class Home extends Component {
       this.state= {
         data: [],
         totalCount: 0,
-        pageToken: "",
         nextPageToken: "",
-        currentPage: 0,
         isLoading: true
-      }
-
+      };
+      
       this.activateInfiniteScroll();
   };
 
+  getYoutubePlaylist() {
+    axios
+      .get(
+        `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=UU-HvkbTWtG_AC0d-PjQ-9YA&maxResults=5&part=snippet&key=${API_KEY}`
+        )
+        .then((response) => {
+          console.log("getting", response.data)
+          this.setState({
+            data: [...response.data.items],
+            totalCount: response.data.pageInfo.totalResults,
+            nextPageToken: response.data.nextPageToken,
+            isLoading: false
+          })
+        })
+        .catch((error) => {
+          console.log("error in getYoutubePlaylist", error);
+    });
+  }
+
+  componentWillMount() {
+    this.getYoutubePlaylist();
+  }
+
+  getNextPage() { 
+    axios
+      .get(
+        `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=UU-HvkbTWtG_AC0d-PjQ-9YA&maxResults=5&part=snippet&pageToken=${this.state.nextPageToken}&key=${API_KEY}`
+        )
+        .then((response) => {
+          console.log("getting next page", response.data)
+          this.setState({
+            data: this.state.data.concat([...response.data.items]),
+            totalCount: response.data.pageInfo.totalResults,
+            nextPageToken: response.data.nextPageToken,
+            isLoading: false
+          })
+        })
+        .catch((error) => {
+          console.log("error in getYoutubePlaylist", error);
+    })
+  }
+
+
   activateInfiniteScroll() {
-      window.onload = function() {
-        var container = document.getElementById("youtubePlaylist")
-        container.onscroll = () => { 
+    window.onload = () => {
+      var container = document.getElementById("youtubePlaylist")
+      container.onscroll = () => { 
         if (
-          container.scrollTop + container.clientHeight ===
-          container.scrollHeight
+          container.scrollTop + container.clientHeight === container.scrollHeight
           ) {
-            console.log("get more videos");
+            this.getNextPage()
           }
       }
     }
-  }
-
-    getYoutubePlaylist() {
-      axios
-        .get(
-          `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=UU-HvkbTWtG_AC0d-PjQ-9YA&maxResults=10&part=snippet&key=${API_KEY}`
-          )
-          .then((response) => {
-            console.log("getting", response.data)
-            this.setState({
-              data: response.data.items,
-              totalCount: response.data.pageInfo.totalResults,
-              nextPageToken: response.data.nextPageToken,
-              pageToken: response.data.pageToken,
-              isLoading: false
-            })
-          })
-          .catch((error) => {
-            console.log("error in getYoutubePlaylist", error);
-      });
-    }
-
-    playlistItems() {
-      return this.state.data.map(item => {
-        return (item)
-      })
-    }
-
-    componentDidMount() {
-      this.getYoutubePlaylist();
-    }
+  };
 
   render() {
     const renderPlaylist = (state) => {
