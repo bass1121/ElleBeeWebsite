@@ -8,7 +8,7 @@ export default function PlaylistItem(props) {
   return (
     <div className="video-container-wrapper">
         <div className="video-container">
-            <a href={`https://www.youtube.com/watch?v=${videoId}&t=3s&`} target="_blank">
+            <a href={`https://www.youtube.com/watch?v=${videoId}&t=3s&`} target="_blank" rel="noreferrer">
                 <img width={width} height={height} src={url} alt='Video Thumbnail'/>
                 <div className="video-title">
                     {title}

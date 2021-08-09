@@ -15,7 +15,6 @@ export default class Home extends Component {
     super();
       this.state= {
         data: [],
-        totalCount: 0,
         nextPageToken: "",
         isLoading: true
       };
@@ -32,7 +31,6 @@ export default class Home extends Component {
           console.log("getting", response.data)
           this.setState({
             data: [...response.data.items],
-            totalCount: response.data.pageInfo.totalResults,
             nextPageToken: response.data.nextPageToken,
             isLoading: false
           })
@@ -42,7 +40,7 @@ export default class Home extends Component {
     });
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.getYoutubePlaylist();
   }
 
@@ -99,7 +97,7 @@ export default class Home extends Component {
           </div>
           <div className="right-side-home" id="rightSideHome">
             <div className="recent-upload-title">
-                  Recent Uploads
+                  Elle's Videos
             </div>
             <div className="youtube-playlist" id="youtubePlaylist">
                 <div className="recent-upload-list" id="recentUploadList">

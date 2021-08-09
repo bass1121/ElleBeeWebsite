@@ -57,16 +57,16 @@ export default function navBar() {
 
         <div className="right-side">
           <div className="outside-link">
-            <a href="https://www.youtube.com/channel/UC-HvkbTWtG_AC0d-PjQ-9YA" target="_blank" rel="noopener">
+            <a href="https://www.youtube.com/channel/UC-HvkbTWtG_AC0d-PjQ-9YA" target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={["fab", "youtube"]} />
             </a>
-            <a href="https://twitter.com/ElleB_official" target="_blank" rel="noopener">
+            <a href="https://twitter.com/ElleB_official" target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={["fab", "twitter-square"]} />
             </a>
-            <a href="https://www.instagram.com/ellebee_official/" target="_blank" rel="noopener">
+            <a href="https://www.instagram.com/ellebee_official/" target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={["fab", "instagram"]} />
             </a>
-            <a href="https://www.facebook.com/LeslieBass123/" target="_blank" rel="noopener">
+            <a href="https://www.facebook.com/LeslieBass123/" target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={["fab", "facebook"]} />
             </a>
           </div>
