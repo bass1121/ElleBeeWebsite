@@ -1,5 +1,14 @@
-import React, { Component, useEffect } from "react";
-import business from "../../images/business.png";
+import React, { Component } from "react";
+
+import Closeup from "../../images/elle-bee-closeup.jpg";
+import Chrisley from "../../images/chrisleyKnowsBest.png";
+import Jersey from "../../images/jerseyShore.jfif"; 
+import LoveAfterLockup from "../../images/loveAfterLockup.jfif";
+import MommaJune from "../../images/mommaJune.jfif";
+import SiestaKey from "../../images/siestaKey.jfif";
+import TeenMom from "../../images/teenMom.jfif";
+import TeenMom2 from "../../images/teenMom2.jfif";
+
 import axios from "axios";
 import PlaylistItem from "../playlist/playlist-item"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -85,16 +94,34 @@ export default class Home extends Component {
     }
 
     return (
-      <div>
+      <div className="homepage-wrapper">
         <div className="home-container">
-          <div className="home-pic">
-            <img src={business} alt="did not load" />
+          <div className="left-side">
+            <div className="divider">
+              <div className="home-pic">
+                <img src={ Closeup } alt="did not load" />
+              </div>
+
+              <div className="text-container">
+                <p>Elle Bee's youtube channel is centered around reality television news. Her livestreams are open discussions about reality television.</p>
+                <p>Elle Bee has put her heart and soul into her channel. She is dedicated to getting the news out about reality television shows like: Jersey Shore, Teen Mom, Mama June, Floribama Shore, 19 Kids and Counting, Siesta Key, Sister Wives, Seeking Sister Wives and 90 Day Fiance.</p>
+                <p>She has a sweet southern charm about her and a huge heart. She is always the first to help people when they are in need and she loves being friendly to everybody. She is always open for suggestions and feedback. Join our community where we can discuss and gossip about the latest reality t.v. news together.</p>
+              </div>
           </div>
-          <div className="text-container">
-            <p>Elle Bee's youtube channel is centered around reality television news. Her livestreams are open discussions on different topics in reality television.</p>
-            <p>Elle Bee puts her heart and soul into her channel. She is dedicated to getting the news out about reality television shows like: Jersey Shore, Teen Mom, Mama June, Floribama Shore, 19 Kids and Counting, Siesta Key, Sister Wives, Seeking Sister Wives and 90 Day Fiance.</p>
-            <p>She has a sweet southern charm about her and a huge heart.</p>
+
+          <div className="show-logo">
+            <img src={ Chrisley } alt="" />
+            <img src={ Jersey } alt="" />
+            <img src={ LoveAfterLockup } alt="" />
+            <img src={ MommaJune } alt="" />
+            <img src={ SiestaKey } alt="" />
+            <img src={ TeenMom } alt="" />
+            <img src={ TeenMom2 } alt="" />
           </div>
+        </div>
+            
+         
+
           <div className="right-side-home" id="rightSideHome">
             <div className="recent-upload-title">
                   Elle's Videos

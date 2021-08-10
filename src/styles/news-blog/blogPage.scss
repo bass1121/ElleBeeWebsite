@@ -9,6 +9,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: cyan;
+    border: 3px solid cornflowerblue;
+    border-radius: 15px;
+    margin-top: 5px;
 }
 
 .drawing-wrapper img {
@@ -38,5 +42,6 @@
     align-items: center;
     color: black;
     background-color: cornflowerblue;
+    margin-top: 5px;
 }
 
