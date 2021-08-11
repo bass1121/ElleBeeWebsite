@@ -10,7 +10,7 @@ import TeenMom from "../../images/teenMom.jfif";
 import TeenMom2 from "../../images/teenMom2.jfif";
 
 import axios from "axios";
-import PlaylistItem from "../playlist/playlist-item"
+import PlaylistItem from "../playlist/playlist-item";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -38,11 +38,11 @@ export default class Home extends Component {
         )
         .then((response) => {
           console.log("getting", response.data)
-          this.setState({
-            data: [...response.data.items],
+          this.setState((prevState) => ({
+            data: [...prevState.data, ...response.data.items],
             nextPageToken: response.data.nextPageToken,
             isLoading: false
-          })
+          }))
         })
         .catch((error) => {
           console.log("error in getYoutubePlaylist", error);
@@ -141,5 +141,3 @@ export default class Home extends Component {
     );
   }
 }
-
-
