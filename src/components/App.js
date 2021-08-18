@@ -17,6 +17,7 @@ import Support from "./pages/support-links";
 import Members from "./pages/members";
 import Merch from "./pages/merch";
 import NoMatch from "./pages/no-match";
+import Login from "./pages/login/login";
 
 import "../styles/main.scss";
 
@@ -38,6 +39,8 @@ export default class App extends Component {
                 <Route path="/support-links" component={Support} />
                 <Route path="/members" component={Members} />
                 <Route path="/merch" component={Merch} />
+                <Route path="/login" component={Login} />
+                <Route path="/member-register" component={Login} />
                 <Route component={NoMatch} />
               </Switch>
             </div>

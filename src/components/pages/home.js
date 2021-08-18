@@ -37,7 +37,6 @@ export default class Home extends Component {
         `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=UU-HvkbTWtG_AC0d-PjQ-9YA&maxResults=5&part=snippet&key=${API_KEY}`
         )
         .then((response) => {
-          console.log("getting", response.data)
           this.setState((prevState) => ({
             data: [...prevState.data, ...response.data.items],
             nextPageToken: response.data.nextPageToken,
@@ -45,7 +44,7 @@ export default class Home extends Component {
           }))
         })
         .catch((error) => {
-          console.log("error in getYoutubePlaylist", error);
+          console.error("error in getYoutubePlaylist", error);
     });
   }
 
@@ -59,7 +58,6 @@ export default class Home extends Component {
         `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=UU-HvkbTWtG_AC0d-PjQ-9YA&maxResults=5&part=snippet&pageToken=${this.state.nextPageToken}&key=${API_KEY}`
         )
         .then((response) => {
-          console.log("getting next page", response.data)
           this.setState({
             data: this.state.data.concat([...response.data.items]),
             totalCount: response.data.pageInfo.totalResults,
@@ -68,7 +66,7 @@ export default class Home extends Component {
           })
         })
         .catch((error) => {
-          console.log("error in getYoutubePlaylist", error);
+          console.error("error in getYoutubePlaylist", error);
     })
   }
 

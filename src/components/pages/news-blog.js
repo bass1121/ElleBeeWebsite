@@ -20,7 +20,13 @@ export default function news() {
       </div>
 
       <div className="blog-posts">
-        where the blog material will go
+        {/* Create */}
+            <button className="create-blog-button">Create New Blog</button>
+        {/* READ */}
+
+        {/* UPDATE */}
+
+        {/* DELETE */}
       </div>
     </div>
   );
