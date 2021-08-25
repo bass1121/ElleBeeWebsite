@@ -37,6 +37,7 @@ export default class Home extends Component {
         `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=UU-HvkbTWtG_AC0d-PjQ-9YA&maxResults=5&part=snippet&key=${API_KEY}`
         )
         .then((response) => {
+          console.log(response.data);
           this.setState((prevState) => ({
             data: [...prevState.data, ...response.data.items],
             nextPageToken: response.data.nextPageToken,
@@ -58,6 +59,7 @@ export default class Home extends Component {
         `https://www.googleapis.com/youtube/v3/playlistItems?playlistId=UU-HvkbTWtG_AC0d-PjQ-9YA&maxResults=5&part=snippet&pageToken=${this.state.nextPageToken}&key=${API_KEY}`
         )
         .then((response) => {
+          console.log(response.data);
           this.setState({
             data: this.state.data.concat([...response.data.items]),
             totalCount: response.data.pageInfo.totalResults,
@@ -127,9 +129,9 @@ export default class Home extends Component {
             <div className="youtube-playlist" id="youtubePlaylist">
                 <div className="recent-upload-list" id="recentUploadList">
                   {renderPlaylist(this.state.data)}
-                  {this.state.isLoading ?(
+                  {this.state.isLoading ? (
                     <div className="spinner-wrapper">
-                      <FontAwesomeIcon icon="spinner" spin />
+                      <FontAwesomeIcon className="spinner-icon" icon="spinner" spin />
                     </div>) : null }
                 </div>
             </div>

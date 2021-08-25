@@ -58,3 +58,14 @@
 .right-side-home {
     margin-right: 10px;
 }
+
+.spinner-wrapper img {
+    align-items: center;
+    height: 20px;
+    font-size: 2.0em;
+    color: turquoise;
+    filter: brightness(110%);
+    width: 100%;
+    display: grid;
+    text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5
+}

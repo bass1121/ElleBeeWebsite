@@ -7,7 +7,7 @@ class Login extends Component {
       email: "",
       password: "",
       confirmPassword: "",
-      errorMessage: "",
+      errorMessage: null,
       toggleSignup: false,
     };
     this.handleChange = this.handleChange.bind(this);
@@ -27,20 +27,56 @@ class Login extends Component {
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value,
-      errorText: "",
     });
   }
 
   handleSubmit(event) {
     event.preventDefault();
 
+    const user = {
+      signup: this.state.toggleSignup,
+      email: this.state.email,
+      password: this.state.password,
+    };
+
     if (this.state.toggleSignup) {
-      console.log(
-        this.state.email,
-        this.state.password,
-        this.state.confirmPassword,
-        this.state.errorMessage
-      );
+      user.confirmPassword = this.state.confirmPassword;
+    }
+
+    if (this.state.toggleSignup) {
+      if (user.password !== user.confirmPassword) {
+        this.setState({
+          errorMessage: "Password must match",
+        });
+        return;
+      }
+
+      this.setState({
+        errorMessage: null,
+      });
+
+      fetch("http://localhost:5000/api/users", {
+        method: "POST",
+        body: JSON.stringify(user),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then(async (res) => {
+          if(!res.ok){ // check if error exists
+            const result = await res.json(); // gain access to error message
+            this.setState({
+              errorMessage: result.message // set errorMessage state to error message
+            })
+            return;
+          }
+
+          return res.json();
+        })
+        .then(data => localStorage.setItem('token', data.data.token))
+        .catch(err => console.error(err));
+
+      return;
     }
 
     console.log(this.state.email, this.state.password, this.state.errorMessage);
@@ -49,11 +85,11 @@ class Login extends Component {
   verifyPassword() {
     return this.state.toggleSignup ? (
       <div className="login-field">
-        <label for="confirmPassword">Confirm Password:</label>
+        <label htmlFor="confirmPassword">Confirm Password:</label>
         <input
           id="confirmPassword"
           type="password"
-          name="confirmPasswword"
+          name="confirmPassword"
           placeholder="Confirm password"
           value={this.state.confirmPassword}
           onChange={this.handleChange}
@@ -71,7 +107,7 @@ class Login extends Component {
         </div>
         <form onSubmit={this.handleSubmit} className="login-form-wrapper">
           <div className="login-field">
-            <label for="email">Email:</label>
+            <label htmlFor="email">Email:</label>
             <input
               id="email"
               type="email"
@@ -84,7 +120,7 @@ class Login extends Component {
           </div>
 
           <div className="login-field">
-            <label for="password">Password:</label>
+            <label htmlFor="password">Password:</label>
             <input
               id="password"
               type="password"
@@ -104,11 +140,12 @@ class Login extends Component {
             </button>
             <button className="login-button" onClick={this.handleToggleSignup}>
               {this.state.toggleSignup
-                ? "Already Signed up?"
-                : "Not Signed Up?"}
+                ? "Already A Member?"
+                : "Not A Member Yet?"}
             </button>
           </div>
         </form>
+        {this.state.errorMessage && this.state.errorMessage}
       </div>
     );
   }

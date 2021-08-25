@@ -7,16 +7,14 @@ export default class Members extends Component {
   render() {
     return (
       <div className="members-wrapper">
-        <div className="member-header">
-          <div className="drawing-wrapper">
-            <img src={ElleDrawing} alt="" />
-          </div>
-          <div className="member-container-wrapper">
-            <LoginForm />
-          </div>
-          <div className="dark-bee-wrapper">
-            <img src={DarkBee} alt="" />
-          </div>
+        <div className="drawing-wrapper">
+          <img src={ElleDrawing} alt="" />
+        </div>
+        <div className="member-container-wrapper">
+          <LoginForm />
+        </div>
+        <div className="dark-bee-wrapper">
+          <img src={DarkBee} alt="" />
         </div>
       </div>
     );

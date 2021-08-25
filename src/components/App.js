@@ -18,9 +18,9 @@ import Members from "./pages/members";
 import Merch from "./pages/merch";
 import NoMatch from "./pages/no-match";
 import Login from "./pages/login/login";
+import AccountManagement from "./pages/accountManagement";
 
 import "../styles/main.scss";
-
 
 library.add(faYoutube, faFacebook, faTwitterSquare, faInstagram);
 
@@ -41,6 +41,10 @@ export default class App extends Component {
                 <Route path="/merch" component={Merch} />
                 <Route path="/login" component={Login} />
                 <Route path="/member-register" component={Login} />
+                <Route
+                  path="/account-management"
+                  component={AccountManagement}
+                />
                 <Route component={NoMatch} />
               </Switch>
             </div>
