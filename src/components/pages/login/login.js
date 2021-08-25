@@ -79,7 +79,27 @@ class Login extends Component {
       return;
     }
 
-    console.log(this.state.email, this.state.password, this.state.errorMessage);
+    fetch("http://localhost:5000/api/users", {
+      method: "POST",
+      body: JSON.stringify(user),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(async res => {
+        if (!res.ok) {
+          // check if error exists
+          const result = await res.json(); // gain access to error message
+          this.setState({
+            errorMessage: result.message, // set errorMessage state to error message
+          });
+          return;
+        }
+
+        return res.json();
+      })
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
   }
 
   verifyPassword() {
