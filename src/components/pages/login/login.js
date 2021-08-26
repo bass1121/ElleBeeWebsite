@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+
+// redux
+import {connect} from 'react-redux'
+import {loginUser, signupUser, clearError} from '../../../redux/actions/userActions'
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -7,7 +11,6 @@ class Login extends Component {
       email: "",
       password: "",
       confirmPassword: "",
-      errorMessage: null,
       toggleSignup: false,
     };
     this.handleChange = this.handleChange.bind(this);
@@ -41,65 +44,14 @@ class Login extends Component {
 
     if (this.state.toggleSignup) {
       user.confirmPassword = this.state.confirmPassword;
-    }
 
-    if (this.state.toggleSignup) {
-      if (user.password !== user.confirmPassword) {
-        this.setState({
-          errorMessage: "Password must match",
-        });
-        return;
-      }
-
-      this.setState({
-        errorMessage: null,
-      });
-
-      fetch("http://localhost:5000/api/users", {
-        method: "POST",
-        body: JSON.stringify(user),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then(async (res) => {
-          if(!res.ok){ // check if error exists
-            const result = await res.json(); // gain access to error message
-            this.setState({
-              errorMessage: result.message // set errorMessage state to error message
-            })
-            return;
-          }
-
-          return res.json();
-        })
-        .then(data => localStorage.setItem('token', data.data.token))
-        .catch(err => console.error(err));
-
+      this.props.signupUser(user)
+      this.props.clearError()
       return;
     }
 
-    fetch("http://localhost:5000/api/users", {
-      method: "POST",
-      body: JSON.stringify(user),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then(async res => {
-        if (!res.ok) {
-          // check if error exists
-          const result = await res.json(); // gain access to error message
-          this.setState({
-            errorMessage: result.message, // set errorMessage state to error message
-          });
-          return;
-        }
-
-        return res.json();
-      })
-      .then(data => console.log(data))
-      .catch(err => console.log(err));
+    this.props.loginUser(user)
+    this.props.clearError()
   }
 
   verifyPassword() {
@@ -120,6 +72,7 @@ class Login extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div className="login-wrapper">
         <div className="signin-form-title">
@@ -165,10 +118,14 @@ class Login extends Component {
             </button>
           </div>
         </form>
-        {this.state.errorMessage && this.state.errorMessage}
+        {this.props.user.error && <p>{this.props.user.error}</p>}
       </div>
     );
   }
 }
 
-export default Login;
+const mapStateToProps = state => ({
+  user: state.user
+})
+
+export default connect(mapStateToProps, {loginUser, signupUser, clearError})(Login);

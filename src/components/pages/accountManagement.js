@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 
+import { connect } from "react-redux";
+
 class AccountManagement extends Component {
   constructor() {
     super();
     this.state = {
+      user: "",
       firstName: "",
       lastName: "",
       userName: "",
@@ -14,7 +17,36 @@ class AccountManagement extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    const slugId = this.props.match.params.slug;
+
+    fetch(`http://localhost:5000/api/user/${slugId}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          user: data.data,
+          firstName: data.data.firstName || "",
+          lastName: data.data.lastName || "",
+          userName: data.data.username || "",
+          phoneNumber: data.data.phoneNumber || "",
+        });
+      })
+      .catch(error => console.log(error));
+  }
+
   handleChange(event) {
+    if (event.target.name === "phoneNumber") {
+      const validNum = /[0-9null()-]/g.test(event.nativeEvent.data);
+
+      if (!validNum) {
+        return;
+      }
+    }
     this.setState({
       [event.target.name]: event.target.value,
     });
@@ -22,6 +54,37 @@ class AccountManagement extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+
+    const user = {
+      ...this.state.user,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      username: this.state.userName,
+      phoneNumber: this.state.phoneNumber,
+    };
+
+    const jsonUser = JSON.stringify(user);
+
+    fetch(`http://localhost:5000/api/user/${user.id}`, {
+      method: "PATCH",
+      body: jsonUser,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(async res => {
+        if (!res.ok) {
+          console.log("error");
+          const result = await res.json();
+
+          throw new Error(result.message);
+        }
+        return res.json();
+      })
+      .then(data => console.log(data))
+      .catch(err => {
+        console.log(err.message);
+      });
   }
 
   render() {
@@ -70,7 +133,7 @@ class AccountManagement extends Component {
               <label htmlFor="phoneNumber">Phone Number:</label>
               <input
                 id="phoneNumber"
-                type="tel"
+                type="text"
                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                 name="phoneNumber"
                 placeholder="Your Phone Number"
@@ -83,11 +146,15 @@ class AccountManagement extends Component {
           </form>
         </div>
         <div>
-          <button>Delete Account</button>
+          <button>Delete User Account</button>
         </div>
       </div>
     );
   }
 }
 
-export default AccountManagement;
+const mapStateToProps = state => ({
+  user: state.user,
+});
+
+export default connect(mapStateToProps)(AccountManagement);

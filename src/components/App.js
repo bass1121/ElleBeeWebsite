@@ -41,10 +41,7 @@ export default class App extends Component {
                 <Route path="/merch" component={Merch} />
                 <Route path="/login" component={Login} />
                 <Route path="/member-register" component={Login} />
-                <Route
-                  path="/account-management"
-                  component={AccountManagement}
-                />
+                <Route path="/:slug" component={AccountManagement} />
                 <Route component={NoMatch} />
               </Switch>
             </div>
