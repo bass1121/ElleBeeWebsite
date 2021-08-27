@@ -72,7 +72,6 @@ class Login extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="login-wrapper">
         <div className="signin-form-title">

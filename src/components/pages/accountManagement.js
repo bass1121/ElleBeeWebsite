@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
+// redux
 import { connect } from "react-redux";
+import {updateUser} from '../../redux/actions/userActions'
 
 class AccountManagement extends Component {
   constructor() {
@@ -11,6 +13,7 @@ class AccountManagement extends Component {
       lastName: "",
       userName: "",
       phoneNumber: "",
+      responseMessage: null
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -65,7 +68,7 @@ class AccountManagement extends Component {
 
     const jsonUser = JSON.stringify(user);
 
-    fetch(`http://localhost:5000/api/user/${user.id}`, {
+    fetch(`http://localhost:5000/api/user/${user._id}`, {
       method: "PATCH",
       body: jsonUser,
       headers: {
@@ -74,20 +77,49 @@ class AccountManagement extends Component {
     })
       .then(async res => {
         if (!res.ok) {
-          console.log("error");
           const result = await res.json();
 
           throw new Error(result.message);
         }
         return res.json();
       })
-      .then(data => console.log(data))
+      .then(data => this.props.updateUser(data.data))
       .catch(err => {
         console.log(err.message);
       });
   }
 
+  handleDeleteUser() {
+    if(this.props.user.authenticated !== this.state.user._id){
+      return;
+    }
+
+    fetch(`http://localhost:5000/api/user/${this.state.user._id}`, {
+      method: 'DELETE',
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(async (res) => {
+        if(!res.ok){
+          const result = await res.json();
+
+          throw new Error(result.message)
+        }
+
+        return res.json()
+      })
+      .then(data => console.log(data.message))
+      .catch(err => {
+        console.log(err.message)
+      })
+  }
+
   render() {
+    if(!this.props.user.authenticated){
+      window.location.href = '/'
+    }
+
     return (
       <div className="member-info-wrapper">
         <div>
@@ -146,7 +178,7 @@ class AccountManagement extends Component {
           </form>
         </div>
         <div>
-          <button>Delete User Account</button>
+          <button onClick={this.handleDeleteUser.bind(this)}>Delete User Account</button>
         </div>
       </div>
     );
@@ -157,4 +189,4 @@ const mapStateToProps = state => ({
   user: state.user,
 });
 
-export default connect(mapStateToProps)(AccountManagement);
+export default connect(mapStateToProps, {updateUser})(AccountManagement);

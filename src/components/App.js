@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+//redux
+import { connect} from 'react-redux'
+
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faYoutube,
@@ -24,7 +27,14 @@ import "../styles/main.scss";
 
 library.add(faYoutube, faFacebook, faTwitterSquare, faInstagram);
 
-export default class App extends Component {
+class App extends Component {
+  isAuthenticated = () => {
+    if(this.props.user.authenticated){
+      // return <BottomNavBar />
+    }
+    return;
+  }
+
   render() {
     return (
       <div className="container">
@@ -44,6 +54,7 @@ export default class App extends Component {
                 <Route path="/:slug" component={AccountManagement} />
                 <Route component={NoMatch} />
               </Switch>
+              {this.isAuthenticated()}
             </div>
           </Router>
         </div>
@@ -51,3 +62,9 @@ export default class App extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  user: state.user
+})
+
+export default connect(mapStateToProps)(App);

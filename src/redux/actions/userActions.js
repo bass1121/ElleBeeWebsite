@@ -4,6 +4,10 @@ export const clearError = () => dispatch => {
   dispatch({ type: CLEAR_ERROR });
 };
 
+export const updateUser = newUserData => dispatch => {
+  dispatch({ type: SET_USER, payload: newUserData });
+};
+
 export const logoutUser = () => dispatch => {
   dispatch({ type: CLEAR_USER });
 

@@ -1,7 +1,14 @@
-import { SET_USER, CLEAR_USER, SET_ERROR, CLEAR_ERROR } from "../types";
+import {
+  SET_USER,
+  CLEAR_USER,
+  SET_AUTHENTICATED,
+  SET_ERROR,
+  CLEAR_ERROR,
+} from "../types";
 
 const initialState = {
   user: null,
+  authenticated: null,
   error: null,
 };
 
@@ -26,6 +33,11 @@ export default function userReducer(state = initialState, action) {
       return {
         ...state,
         user: null,
+      };
+    case SET_AUTHENTICATED:
+      return {
+        ...state,
+        authenticated: action.payload,
       };
     default:
       return state;
