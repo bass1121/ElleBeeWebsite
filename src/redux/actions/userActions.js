@@ -74,6 +74,7 @@ export const signupUser = credentials => dispatch => {
     })
     .then(data => {
       dispatch({ type: SET_USER, payload: data.savedUser });
+      dispatch({ type: SET_AUTHENTICATED, payload: data.savedUser._id });
 
       setAuthHeader(data.token);
     })

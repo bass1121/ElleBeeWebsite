@@ -84,6 +84,7 @@ class AccountManagement extends Component {
         return res.json();
       })
       .then(data => this.props.updateUser(data.data))
+      .then(()=> window.location.href = '/')
       .catch(err => {
         console.log(err.message);
       });
@@ -109,7 +110,12 @@ class AccountManagement extends Component {
 
         return res.json()
       })
-      .then(data => console.log(data.message))
+      .then(() => {
+        localStorage.removeItem('AuthToken')
+      })
+      .then(() => {
+        window.location.href = '/'
+      })
       .catch(err => {
         console.log(err.message)
       })

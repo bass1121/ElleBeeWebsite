@@ -29,7 +29,7 @@ class BottomNavBar extends Component {
           <Link to={`/user/${this.props.user.authenticated}`}>
             {this.state.username
               ? `${this.state.username}'s Account`
-              : "Users Account"}
+              : "User's Account"}
           </Link>
         </div>
         <div className="navbar-button">

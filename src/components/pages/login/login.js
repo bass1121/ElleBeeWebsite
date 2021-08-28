@@ -47,7 +47,6 @@ class Login extends Component {
 
       this.props.signupUser(user);
       this.props.clearError();
-      window.location.href = "/";
       return;
     }
 
@@ -57,7 +56,7 @@ class Login extends Component {
 
   componentDidUpdate() {
     if (this.props.user.authenticated) {
-      window.location.href = "/";
+      window.location.href = this.state.toggleSignup ? `/user/${this.props.user.user._id}` : '/';
     }
   }
 
