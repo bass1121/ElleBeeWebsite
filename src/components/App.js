@@ -22,6 +22,7 @@ import Merch from "./pages/merch";
 import NoMatch from "./pages/no-match";
 import Login from "./pages/login/login";
 import AccountManagement from "./pages/accountManagement";
+import BottomNavbar from "./navigation/bottom-navbar";
 
 import "../styles/main.scss";
 
@@ -29,11 +30,11 @@ library.add(faYoutube, faFacebook, faTwitterSquare, faInstagram);
 
 class App extends Component {
   isAuthenticated = () => {
-    if(this.props.user.authenticated){
-      // return <BottomNavBar />
+    if (this.props.user.authenticated) {
+      return <BottomNavbar />;
     }
     return;
-  }
+  };
 
   render() {
     return (
@@ -51,7 +52,7 @@ class App extends Component {
                 <Route path="/merch" component={Merch} />
                 <Route path="/login" component={Login} />
                 <Route path="/member-register" component={Login} />
-                <Route path="/:slug" component={AccountManagement} />
+                <Route path="/user/:slug" component={AccountManagement} />
                 <Route component={NoMatch} />
               </Switch>
               {this.isAuthenticated()}

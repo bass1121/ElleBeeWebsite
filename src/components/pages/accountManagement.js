@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 // redux
 import { connect } from "react-redux";
-import {updateUser} from '../../redux/actions/userActions'
+import { updateUser } from "../../redux/actions/userActions";
 
 class AccountManagement extends Component {
   constructor() {
