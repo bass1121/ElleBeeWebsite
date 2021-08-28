@@ -29,12 +29,24 @@ import "../styles/main.scss";
 library.add(faYoutube, faFacebook, faTwitterSquare, faInstagram);
 
 class App extends Component {
-  isAuthenticated = () => {
+  constructor(props) {
+    super(props);
+    this.state = {
+      authenticated: null,
+    };
+  }
+
+  componentDidUpdate() {
     if (this.props.user.authenticated) {
-      return <BottomNavbar />;
+      this.setState(prevState => {
+        if (prevState.authenticated !== this.props.user.authenticated) {
+          return {
+            authenticated: this.props.user.authenticated,
+          };
+        }
+      });
     }
-    return;
-  };
+  }
 
   render() {
     return (
@@ -55,7 +67,7 @@ class App extends Component {
                 <Route path="/user/:slug" component={AccountManagement} />
                 <Route component={NoMatch} />
               </Switch>
-              {this.isAuthenticated()}
+              {this.state.authenticated && <BottomNavbar />}
             </div>
           </Router>
         </div>

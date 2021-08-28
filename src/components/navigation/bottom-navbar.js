@@ -17,6 +17,11 @@ class BottomNavBar extends Component {
     });
   }
 
+  logoutUser = () => {
+    this.props.logoutUser();
+    window.location.reload();
+  };
+
   render() {
     return (
       <div className="bottomNavBarWrapper">
@@ -28,7 +33,7 @@ class BottomNavBar extends Component {
           </Link>
         </div>
         <div className="navbar-button">
-          <button onClick={this.props.logoutUser}>Logout</button>
+          <button onClick={this.logoutUser}>Logout</button>
         </div>
       </div>
     );

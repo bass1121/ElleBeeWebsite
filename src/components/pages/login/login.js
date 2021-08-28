@@ -33,7 +33,7 @@ class Login extends Component {
     });
   }
 
-  handleSubmit(event) {
+  async handleSubmit(event) {
     event.preventDefault();
 
     const user = {
@@ -45,13 +45,20 @@ class Login extends Component {
     if (this.state.toggleSignup) {
       user.confirmPassword = this.state.confirmPassword;
 
-      this.props.signupUser(user)
-      this.props.clearError()
+      this.props.signupUser(user);
+      this.props.clearError();
+      window.location.href = "/";
       return;
     }
 
-    this.props.loginUser(user)
-    this.props.clearError()
+    this.props.loginUser(user);
+    this.props.clearError();
+  }
+
+  componentDidUpdate() {
+    if (this.props.user.authenticated) {
+      window.location.href = "/";
+    }
   }
 
   verifyPassword() {

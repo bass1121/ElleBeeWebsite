@@ -1,4 +1,10 @@
-import { SET_ERROR, SET_USER, CLEAR_ERROR, CLEAR_USER } from "../types";
+import {
+  SET_ERROR,
+  SET_USER,
+  CLEAR_ERROR,
+  CLEAR_USER,
+  SET_AUTHENTICATED,
+} from "../types";
 
 export const clearError = () => dispatch => {
   dispatch({ type: CLEAR_ERROR });
@@ -34,6 +40,7 @@ export const loginUser = credentials => dispatch => {
     })
     .then(data => {
       dispatch({ type: SET_USER, payload: data.user });
+      dispatch({ type: SET_AUTHENTICATED, payload: data.user._id });
 
       setAuthHeader(data.token);
     })

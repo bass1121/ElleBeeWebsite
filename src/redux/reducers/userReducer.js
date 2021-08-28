@@ -33,6 +33,7 @@ export default function userReducer(state = initialState, action) {
       return {
         ...state,
         user: null,
+        authenticated: null,
       };
     case SET_AUTHENTICATED:
       return {
