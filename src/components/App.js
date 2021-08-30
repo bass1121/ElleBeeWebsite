@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { connect} from 'react-redux'
 
 import { library } from "@fortawesome/fontawesome-svg-core";
+import { faUserCog, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import {
   faYoutube,
   faFacebook,
@@ -26,7 +27,14 @@ import BottomNavbar from "./navigation/bottom-navbar";
 
 import "../styles/main.scss";
 
-library.add(faYoutube, faFacebook, faTwitterSquare, faInstagram);
+library.add(
+  faYoutube,
+  faFacebook,
+  faTwitterSquare,
+  faInstagram,
+  faUserCog,
+  faSignOutAlt
+);
 
 class App extends Component {
   constructor(props) {

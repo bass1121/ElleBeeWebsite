@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { connect } from "react-redux";
 import { logoutUser } from "../../redux/actions/userActions";
@@ -26,14 +27,17 @@ class BottomNavBar extends Component {
     return (
       <div className="bottomNavBarWrapper">
         <div className="navbar-button">
+          <div className="navbar-button">
+            <button onClick={this.logoutUser}>
+              <FontAwesomeIcon icon={["fas", "sign-out-alt"]} />
+            </button>
+          </div>
           <Link to={`/user/${this.props.user.authenticated}`}>
-            {this.state.username
+            <FontAwesomeIcon icon={["fas", "user-cog"]} />
+            {/* {this.state.username
               ? `${this.state.username}'s Account`
-              : "User's Account"}
+              : "User's Account"} */}
           </Link>
-        </div>
-        <div className="navbar-button">
-          <button onClick={this.logoutUser}>Logout</button>
         </div>
       </div>
     );

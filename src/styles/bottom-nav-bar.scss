@@ -2,16 +2,46 @@
     position: fixed;
     bottom: 20px;
     left: 20px;
-    background-color: black;
-    padding: 10px;
-
+    // background-color: cornflowerblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+    font-size: 20px;
+    height: 30px;
+    
     .navbar-button {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         
-        button{
-
+        
+        button {
+            color: cornflowerblue;
+            font-size: 55px;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            transition: .5s ease-in-out;
+            filter: brightness(110%);
+           }
+        
+        button:hover {
+            color: turquoise;
+            font-size: 56px;
+            cursor: pointer;
         }
-        a{
 
+        a {
+            filter: brightness(110%);
+            font-size: 50px;
+            color: cornflowerblue;
+            transition: .5s ease-in-out;
+        }
+        
+        a:hover {
+            color: turquoise;
+            font-size: 51px;
+            cursor: pointer;
         }
     }
 }
