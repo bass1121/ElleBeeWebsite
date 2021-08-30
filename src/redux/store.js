@@ -5,10 +5,13 @@ import reducers from "./reducers/index";
 const store = createStore(
   reducers,
   {},
-  compose(
-    applyMiddleware(reduxThunk)
-    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
+  applyMiddleware(reduxThunk) //Production
+
+  //Development
+  // compose(
+  //   applyMiddleware(reduxThunk)
+  //   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  // )
 );
 
 export default store;
