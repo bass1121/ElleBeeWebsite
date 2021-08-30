@@ -21,7 +21,7 @@ export const logoutUser = () => dispatch => {
 };
 
 export const loginUser = credentials => dispatch => {
-  fetch(`${process.env.API_ROUTE}/api/users`, {
+  fetch(`${process.env.REACT_APP_API_ROUTE}/api/users`, {
     method: "POST",
     body: JSON.stringify(credentials),
     headers: {
@@ -55,7 +55,7 @@ export const signupUser = credentials => dispatch => {
     return;
   }
 
-  fetch(`${process.env.API_ROUTE}/api/users`, {
+  fetch(`${process.env.REACT_APP_API_ROUTE}/api/users`, {
     method: "POST",
     body: JSON.stringify(credentials),
     headers: {

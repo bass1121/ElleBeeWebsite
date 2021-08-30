@@ -20,7 +20,7 @@ if (token) {
   } else {
     store.dispatch({ type: SET_AUTHENTICATED, payload: decodedToken._id });
 
-    fetch(`${process.env.API_ROUTE}/api/user`, {
+    fetch(`${process.env.REACT_APP_API_ROUTE}/api/user`, {
       method: "POST",
       body: JSON.stringify({ _id: decodedToken._id }),
       headers: {
