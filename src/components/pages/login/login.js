@@ -56,7 +56,7 @@ class Login extends Component {
 
   componentDidUpdate() {
     if (this.props.user.authenticated) {
-      window.location.href = this.state.toggleSignup ? `/user/${this.props.user.user._id}` : '/';
+      window.location.href = "/";
     }
   }
 
