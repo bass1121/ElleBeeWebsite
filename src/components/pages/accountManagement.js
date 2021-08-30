@@ -23,7 +23,7 @@ class AccountManagement extends Component {
   componentDidMount() {
     const slugId = this.props.match.params.slug;
 
-    fetch(`http://localhost:5000/api/user/${slugId}`, {
+    fetch(`${process.env.API_ROUTE}/api/user/${slugId}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +68,7 @@ class AccountManagement extends Component {
 
     const jsonUser = JSON.stringify(user);
 
-    fetch(`http://localhost:5000/api/user/${user._id}`, {
+    fetch(`${process.env.API_ROUTE}/api/user/${user._id}`, {
       method: "PATCH",
       body: jsonUser,
       headers: {
@@ -95,7 +95,7 @@ class AccountManagement extends Component {
       return;
     }
 
-    fetch(`http://localhost:5000/api/user/${this.state.user._id}`, {
+    fetch(`${process.env.API_ROUTE}/api/user/${this.state.user._id}`, {
       method: 'DELETE',
       headers: {
         "Content-Type": "application/json"

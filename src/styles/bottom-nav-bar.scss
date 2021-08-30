@@ -23,12 +23,12 @@
             outline: none;
             transition: .5s ease-in-out;
             filter: brightness(110%);
-           }
-        
-        button:hover {
-            color: turquoise;
-            font-size: 56px;
-            cursor: pointer;
+            
+            &:hover {
+                color: turquoise;
+                font-size: 56px;
+                cursor: pointer;
+            }
         }
 
         a {

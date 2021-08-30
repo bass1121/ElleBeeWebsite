@@ -21,7 +21,7 @@ export const logoutUser = () => dispatch => {
 };
 
 export const loginUser = credentials => dispatch => {
-  fetch("http://localhost:5000/api/users", {
+  fetch(`${process.env.API_ROUTE}/api/users`, {
     method: "POST",
     body: JSON.stringify(credentials),
     headers: {
@@ -55,7 +55,7 @@ export const signupUser = credentials => dispatch => {
     return;
   }
 
-  fetch("http://localhost:5000/api/users", {
+  fetch(`${process.env.API_ROUTE}/api/users`, {
     method: "POST",
     body: JSON.stringify(credentials),
     headers: {
