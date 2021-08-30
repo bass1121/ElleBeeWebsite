@@ -128,63 +128,63 @@ class AccountManagement extends Component {
 
     return (
       <div className="member-info-wrapper">
-        <div>
-          <form onSubmit={this.handleSubmit} className="login-form-wrapper">
-            <div className="member-info-input">
-              <label htmlFor="firstName">First Name:</label>
-              <input
-                id="firstName"
-                type="text"
-                name="firstName"
-                placeholder="First Name"
-                value={this.state.firstName}
-                onChange={this.handleChange}
-              />
-            </div>
+        <form onSubmit={this.handleSubmit} className="information-form">
+          <div className="member-info-input">
+            <label htmlFor="firstName__">First Name: </label>
+            <input
+              id="firstName"
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              value={this.state.firstName}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="member-info-input">
+            <label htmlFor="lastName">Last Name: </label>
+            <input
+              id="lastName"
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              value={this.state.lastName}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="member-info-input">
+            <label htmlFor="userName">User Name: </label>
+            <input
+              id="userName"
+              type="text"
+              name="userName"
+              placeholder="Create Username (Required)"
+              value={this.state.userName}
+              onChange={this.handleChange}
+              required
+            />
+          </div>
+          <div className="member-info-input">
+            <label htmlFor="phoneNumber">Phone Number: </label>
+            <input
+              id="phoneNumber"
+              type="text"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              name="phoneNumber"
+              placeholder="Your Phone Number"
+              value={this.state.phoneNumber}
+              onChange={this.handleChange}
+            />
+          </div>
+          <button className="form-button">Submit</button>
+        </form>
 
-            <div className="member-info-input">
-              <label htmlFor="lastName">Last Name:</label>
-              <input
-                id="lastName"
-                type="text"
-                name="lastName"
-                placeholder="Last Name"
-                value={this.state.lastName}
-                onChange={this.handleChange}
-              />
-            </div>
-
-            <div className="member-info-input">
-              <label htmlFor="userName">User Name:</label>
-              <input
-                id="userName"
-                type="text"
-                name="userName"
-                placeholder="Create Username (Required)"
-                value={this.state.userName}
-                onChange={this.handleChange}
-                required
-              />
-            </div>
-
-            <div className="member-info-input">
-              <label htmlFor="phoneNumber">Phone Number:</label>
-              <input
-                id="phoneNumber"
-                type="text"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                name="phoneNumber"
-                placeholder="Your Phone Number"
-                value={this.state.phoneNumber}
-                onChange={this.handleChange}
-              />
-            </div>
-
-            <button>Submit</button>
-          </form>
-        </div>
-        <div>
-          <button onClick={this.handleDeleteUser.bind(this)}>Delete User Account</button>
+        <div className="delete-button-wrapper">
+          <button
+            className="delete-button"
+            onClick={this.handleDeleteUser.bind(this)}
+          >
+            Delete User Account
+          </button>
         </div>
       </div>
     );

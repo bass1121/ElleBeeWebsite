@@ -1,0 +1,45 @@
+.member-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    border: 5px solid cornflowerblue;
+    margin: 50px;
+  
+    .information-form {
+        font-size: 50px;
+        color: darkslategrey;
+        // text-decoration: underline;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+
+        input {
+            margin: 2px;
+            font-size: 40px;
+        }
+
+        button {
+            background-color: cornflowerblue;
+            border: 5px solid cornflowerblue;
+            border-radius: 2px;
+            height: 40px;
+            font-size: 25px;
+            color: turquoise;
+            transition: .5s ease-in-out;
+            cursor: pointer;
+        }         
+    }
+}
+
+.delete-button-wrapper {
+    margin-top: 30px;
+    
+    button {
+        color: red;
+        border: 1px solid red;
+        background-color: white;
+        cursor: pointer;
+    }
+}

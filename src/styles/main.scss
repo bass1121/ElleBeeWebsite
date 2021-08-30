@@ -2,8 +2,11 @@
 @import "nav-bar.scss";
 @import 'bottom-nav-bar.scss';
 @import "home.scss";
-@import "members.scss";
+
+@import "./members/members.scss";
+@import "./members/account-management.scss";
+
 @import "playlist-item.scss";
 @import "about-page.scss";
 
-@import "./news-blog/blogPage.scss"
+@import "./news-blog/blogPage.scss";
