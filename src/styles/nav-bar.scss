@@ -3,6 +3,7 @@
 }
 
 .nav-wrapper {
+    width: 100vw;
     background-color: rgb(255, 255, 255);
     border-bottom: solid 3px cornflowerblue;
     border-top: solid 3px cornflowerblue;
@@ -21,7 +22,6 @@
 .title {
     align-items: center;
     height: 85px;
-    font-size: 4.0em;
     color: turquoise;
     filter: brightness(110%);
     width: 100%;
@@ -39,6 +39,7 @@
     .elle-title {
         display: flex;
         justify-content: center;
+        font-size: 4em;
     }
 };
 
@@ -55,9 +56,13 @@ img.one-bee, .three-bee, .five-bee {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 15px;
+    padding: 0px 23px;
     font-size: 20px;
     height: 30px;
+
+    // .hamburger-toggle {
+    //     display: none;
+    // }
 
     .nav-link {
         display: block;

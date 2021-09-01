@@ -8,11 +8,11 @@ const store = createStore(
   {},
   applyMiddleware(reduxThunk) //Production
 
-  //Development
-  // compose(
-  //   applyMiddleware(reduxThunk)
-  //   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  // )
+  // Development
+  //   compose(
+  //     applyMiddleware(reduxThunk),
+  //     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  //   )
 );
 
 export default store;

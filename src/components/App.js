@@ -5,7 +5,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { connect} from 'react-redux'
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faUserCog, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUserCog,
+  faSignOutAlt,
+  faBars,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faYoutube,
   faFacebook,
@@ -17,9 +21,9 @@ import NavComponent from "./navigation/nav-bar";
 import Home from "./pages/home";
 import About from "./pages/about-me";
 import News from "./pages/news-blog";
-import Support from "./pages/support-links";
+// import Support from "./pages/support-links";
 import Members from "./pages/members";
-import Merch from "./pages/merch";
+// import Merch from "./pages/merch";
 import NoMatch from "./pages/no-match";
 import Login from "./pages/login/login";
 import AccountManagement from "./pages/accountManagement";
@@ -33,7 +37,8 @@ library.add(
   faTwitterSquare,
   faInstagram,
   faUserCog,
-  faSignOutAlt
+  faSignOutAlt,
+  faBars
 );
 
 class App extends Component {
@@ -67,9 +72,9 @@ class App extends Component {
                 <Route exact path="/" component={Home} />
                 <Route path="/about-me" component={About} />
                 <Route path="/news-blog" component={News} />
-                <Route path="/support-links" component={Support} />
+                {/* <Route path="/support-links" component={Support} /> */}
                 <Route path="/members" component={Members} />
-                <Route path="/merch" component={Merch} />
+                {/* <Route path="/merch" component={Merch} /> */}
                 <Route path="/login" component={Login} />
                 <Route path="/member-register" component={Login} />
                 <Route path="/user/:slug" component={AccountManagement} />

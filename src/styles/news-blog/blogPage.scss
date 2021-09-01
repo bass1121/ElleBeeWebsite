@@ -3,14 +3,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: darkslateblue;
+    padding-bottom: 100px;
 }
 
 .blog-header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: cyan;
-    border: 3px solid cornflowerblue;
+    background-color: azure;
+    border: 5px solid cornflowerblue;
     border-radius: 15px;
     margin-top: 5px;
 }
@@ -22,6 +24,7 @@
 }
 
 .blog-page-title {
+    justify-content: center;
     font-family: "Style Script", cursive;
     font-size: 70px;
     color: darkslategrey;
@@ -35,13 +38,30 @@
 }
 
 .blog-posts {
-    border: 2px solid black;
+    border: 5px solid cornflowerblue;
+    border-radius: 10px;
     width: 700px;
-    height: 400px;
+    height: 200px;
     justify-content: center;
     align-items: center;
-    color: black;
-    background-color: cornflowerblue;
+    color: cornflowerblue;
+    background-color: whitesmoke;
     margin-top: 5px;
+
+    .blog-title {
+        width: 40vw;
+        color: azure;
+        padding-left: 5px;
+        font-size: 2em;
+        font-family: fantasy;
+        text-shadow: 2px 2px 0 #4074b5, 2px 1px 0 #4074b5, -2px -1px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5, 0px 11px 13px rgba(25,67,81,0.44);
+        text-decoration: underline;
+    }
+
+    .blog-content {
+        font-family: fantasy;
+        padding: 10px;
+    }
+
 }
 

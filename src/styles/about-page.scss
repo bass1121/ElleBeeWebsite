@@ -1,14 +1,36 @@
 .about-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    margin-top: 20px;
+    display: flex;
     padding: 10px;
-    align-items: center;
 
     .about-pic {
-        height: calc(100vh - 132px);
+        float: left;
+        height: 600px;
+        border-radius: 3px;
     }
 
     .about-text {
+        margin-top: 20px;
+        margin-left: 15px;
+        padding-right: 5px;
+        width: auto;
         font-size: 20px;
+        
+        .about-title {
+            width: 15vw;
+            font-size: 1.5em;
+            text-shadow: 2px 2px 0 #4074b5, 2px 1px 0 #4074b5, -2px -1px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5, 0px 11px 13px rgba(25,67,81,0.44);
+            color: turquoise;
+            margin-left: 5px;
+            border-bottom: 1px solid darkslategray;
+        }
+
+        ul {
+            font-size: 1.2em;
+            color: darkslateblue;
+            padding-bottom: 5px;
+        }
+    
     }
+
 }

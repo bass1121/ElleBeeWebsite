@@ -134,7 +134,7 @@ export default class Home extends Component {
           </div>
 
           <div className="right-side-home" id="rightSideHome">
-            <div className="recent-upload-title">Elle's Videos</div>
+            <div className="recent-upload-title">Elle's Content</div>
             <div className="youtube-playlist" id="youtubePlaylist">
               <div className="recent-upload-list" id="recentUploadList">
                 {renderPlaylist(this.state.data)}
