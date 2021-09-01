@@ -29,7 +29,7 @@ export default function about() {
           she lives in. She comes from a family with five kids. She has two
           sisters and two brothers. She has been married since 2008 to a husband
           that loves her very much. The only thing she values more than her
-          famil is her faith.
+          family is her faith.
         </ul>
         <div className="about-title">Faith:</div>
         <ul>
