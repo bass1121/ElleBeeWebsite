@@ -152,7 +152,7 @@ class AccountManagement extends Component {
             />
           </div>
           <div className="member-info-input">
-            <label htmlFor="userName">User Name: </label>
+            <label htmlFor="userName">Username: </label>
             <input
               id="userName"
               type="text"

@@ -220,10 +220,10 @@
     width: 50%;
     
     .mobile-nav-link {
-        font-size: 1.8em;
+        font-size: 1.6em;
     
         a {
-            font-family: 'Style Script';
+            font-family: sans-serif;
             font-weight: bolder;
             display: block;
             color: cornflowerblue;
@@ -335,6 +335,32 @@
     }
 }
 
+
+@media screen and (max-width: 655px) {
+    .member-info-wrapper {
+        width: 85vw;
+        height: 650px;
+        justify-content: unset;
+
+        .member-info-input {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                font-size: .5em;
+                width: 200px;
+            }
+
+            input {
+                font-size: .3em;
+                width: 200px;
+            }
+
+
+        }
+    }
+}
+
 //NEWS AND BLOG
 
 @media screen and (max-width: 1245px) {
@@ -348,7 +374,8 @@
             
             .blog-container-wrapper {
                 .blog-page-title {
-                    font-size: 2.8em;
+                    font-size: 2.7em;
+                    font-weight: 800;
                 }
             }
         }
@@ -422,10 +449,6 @@
                 .blog-title {
                     font-size: 1.5em;
                 }
-
-                .blog-content {
-
-                }
             }
         }
     }
@@ -438,9 +461,9 @@
         color: red;
     }
     .navbar-button a svg {
-            font-size: 30px;
+            font-size: 27px;
             margin-top: 30px;
-            color: darkslateblue;
+            color: magenta;
         }
     
     

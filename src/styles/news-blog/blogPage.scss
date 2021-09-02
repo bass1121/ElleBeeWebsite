@@ -24,9 +24,10 @@
 }
 
 .blog-page-title {
+    font-weight: 800;
     justify-content: center;
-    font-family: "Style Script", cursive;
-    font-size: 70px;
+    font-family: sans-serif;
+    font-size: 40px;
     color: darkslategrey;
     text-decoration: underline;
     margin: 10px;
@@ -50,16 +51,16 @@
 
     .blog-title {
         width: 40vw;
-        color: azure;
+        color: black;
         padding-left: 5px;
         font-size: 2em;
-        font-family: fantasy;
         text-shadow: 2px 2px 0 #4074b5, 2px 1px 0 #4074b5, -2px -1px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5, 0px 11px 13px rgba(25,67,81,0.44);
         text-decoration: underline;
     }
 
     .blog-content {
-        font-family: fantasy;
+        font-family: sans-serif;
+        font-weight: 900;
         padding: 10px;
     }
 

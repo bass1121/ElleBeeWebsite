@@ -5,10 +5,13 @@
     align-items: center;
     height: 500px;
     border: 5px solid cornflowerblue;
+    border-radius: 7px;
+    background-color: floralwhite;
     margin: 50px;
   
     .information-form {
-        font-family: fantasy;
+        font-family: sans-serif;
+        font-weight: 900;
         font-size: 50px;
         color: darkslategrey;
         // text-decoration: underline;
@@ -16,7 +19,12 @@
         display: flex;
         flex-direction: column;
 
+        .member-info-input {
+            padding-bottom: 10px;
+        }
+
         input {
+            background-color: ghostwhite;
             margin: 2px;
             font-size: 40px;
             width: 40vw;
@@ -24,10 +32,11 @@
 
         button {
             background-color: cornflowerblue;
-            border: 5px solid cornflowerblue;
+            border: 5px solid thick;
             border-radius: 2px;
             height: 40px;
-            font-size: 25px;
+            font-size: 28px;
+            font-weight: 600;
             color: turquoise;
             transition: .5s ease-in-out;
             cursor: pointer;
@@ -39,9 +48,9 @@
     margin-top: 30px;
     
     button {
-        color: red;
+        color: whitesmoke;
         border: 1px solid red;
-        background-color: white;
+        background-color: lightcoral;
         cursor: pointer;
     }
 }
