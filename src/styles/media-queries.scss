@@ -332,14 +332,15 @@
                         }
                     }
                     .login-button-wrapper {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
 
                         button {
                             font-size: 1.1em;
                             width: 300px;
                             font-weight: 800;
                             margin-left: 0px;
-
-
                         }
                     }
                 }
@@ -350,6 +351,7 @@
             margin-top: 50px;
            
             img {
+                padding-top: 10px;
                 float: right;
                 position: relative;
                 height: 80px;
