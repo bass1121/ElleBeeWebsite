@@ -112,7 +112,7 @@ class Login extends Component {
 
           {this.verifyPassword()}
 
-          <div>
+          <div className="login-button-wrapper">
             <button className="login-button" type="submit">
               {this.state.toggleSignup ? "Member Signup" : "Member Login"}
             </button>
