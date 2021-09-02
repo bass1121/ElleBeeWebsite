@@ -298,6 +298,60 @@
         }
     }
 }
+@media screen and (max-width: 600px) {
+    .members-wrapper {
+        flex-direction: column;
+        
+        .drawing-wrapper {
+            height: 125px;
+
+            img {
+                height: 150px;
+            }
+        }
+
+        .member-container-wrapper{
+            .login-wrapper {
+                margin-top: 80px;
+
+                .signin-form-title {
+                    font-size: 40px;
+                    font-weight: 800;
+                }
+
+                .login-form-wrapper {
+                    justify-content: center;
+                    .login-field{
+                        label {
+                        }
+                        input {
+                            width: 300px;
+                            font-family: sans-serif;
+                            font-size: 30px
+                        }
+                    }
+
+                    button {
+                        font-size: 1.2em;
+                        width: 150px;
+                        font-weight: 800;
+
+                    }
+                }
+            }
+        }
+
+        .dark-bee-wrapper {
+            margin-top: 50px;
+           
+            img {
+                float: right;
+                position: unset;
+                height: 80px;
+            }
+        }
+    }
+}
 
 //MEMBERS SIGNUP
 @media screen and (max-width: 1150px) {
