@@ -527,6 +527,33 @@
 
         }
     }
+
+}
+
+@media screen and (max-width: 500px) {
+    .member-info-wrapper {
+        width: 85vw;
+        height: 90vh;
+        justify-content: unset;
+        margin: 5px;
+
+        .member-info-input {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                font-size: .4em;
+                width: 200px;
+            }
+
+            input {
+                font-size: .3em;
+                width: 200px;
+            }
+
+
+        }
+    }
 }
 
 //NEWS AND BLOG
