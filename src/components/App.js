@@ -9,6 +9,7 @@ import {
   faUserCog,
   faSignOutAlt,
   faBars,
+  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faYoutube,
@@ -38,7 +39,8 @@ library.add(
   faInstagram,
   faUserCog,
   faSignOutAlt,
-  faBars
+  faBars,
+  faChevronRight
 );
 
 class App extends Component {

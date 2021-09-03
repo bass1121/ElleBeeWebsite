@@ -379,6 +379,33 @@
     }
 }
 
+@media screen and (max-width: 500px) {
+    .about-container {
+        margin-top: 0px;
+        display: block;
+        padding: 5px;
+        
+        
+        .about-pic {
+            height: 250px;
+            
+        }
+
+        .about-text {
+            margin-top: 0px;
+            margin-left: 5px;
+            margin-right: 5px;
+        
+            .about-title {
+                
+                font-size: 1.2em;
+                width: 50vw;
+            }
+        
+        }
+    }
+}
+
 //MEMBERS SIGNIN
 @media screen and (max-width: 950px) {
     .members-wrapper {
@@ -650,15 +677,10 @@
 
 //BOTTOM NAVBAR
 @media screen and (max-width: 750px){
-    .navbar-button  button svg {
-        font-size: 30px;
-        color: red;
+    .bottomNavBarWrapper {
+        bottom: 10px;
+        height: 6vh;
     }
-    .navbar-button a svg {
-            font-size: 27px;
-            margin-top: 30px;
-            color: magenta;
-        }
     
     
 }

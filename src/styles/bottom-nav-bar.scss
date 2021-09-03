@@ -1,47 +1,81 @@
 .bottomNavBarWrapper {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
-    // background-color: cornflowerblue;
-    display: flex;
-    justify-content: space-between;
+    bottom: 10px;
+    left: -154px;
+    background-color: cornflowerblue;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    justify-content: center;
     align-items: center;
-    padding: 0px 15px;
-    font-size: 20px;
-    height: 70px;
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+    padding: 5px;
+    transition: .5s ease-in-out;
+
+        &:hover {
+            left: 0px;
+            bottom: 10px;
+        }
     
     .navbar-button {
         display: grid;
+        justify-self: center;
+        align-items: center;
         grid-template-columns: 1fr 1fr;
+        // grid-row-gap: 10px;
+
         
         
         button {
-            color: cornflowerblue;
-            font-size: 55px;
-            background-color: transparent;
             border: none;
-            outline: none;
-            transition: .5s ease-in-out;
-            filter: brightness(110%);
+            background-color: transparent;
+            justify-content: center;
+            align-items: center;
             
-            &:hover {
-                color: turquoise;
-                font-size: 56px;
-                cursor: pointer;
+            
+            svg {
+                transition: .5s ease-in-out;
+                color: white;
+                // padding: 1px;
+                font-size: 24px;
+                
+                &:hover {
+                    cursor: pointer;
+                    color: turquoise;
+                }
             }
         }
 
         a {
-            filter: brightness(110%);
-            font-size: 50px;
-            color: cornflowerblue;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border-radius: 1px;
             transition: .5s ease-in-out;
+            padding: 1px;
+            
+            
+            svg {
+                font-size: 22px;
+            }
         }
         
         a:hover {
+            color: turquoise;;
+        }
+    
+    }
+    .chevron-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        svg {  
+            font-size: 22px;
             color: turquoise;
-            font-size: 51px;
-            cursor: pointer;
+            transition: .5s ease-in-out;
         }
     }
 }

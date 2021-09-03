@@ -39,6 +39,9 @@ class BottomNavBar extends Component {
               : "User's Account"} */}
           </Link>
         </div>
+        <div className="chevron-wrapper">
+          <FontAwesomeIcon icon={("fas", "chevron-right")} />
+        </div>
       </div>
     );
   }
