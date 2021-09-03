@@ -60,6 +60,7 @@
 
 @media screen and (max-width: 1151px) {
     .home-container {
+        
         .left-side {
             .divider {
                 display: block;
@@ -84,6 +85,8 @@
  
     .home-container {
         .right-side-home {
+
+
             .recent-upload-title {
                 font-size: 2em;
                 text-shadow: 2px 2px 0 #4074b5, 2px 1px 0 #4074b5, -2px -1px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5, 0px 11px 13px rgba(25,67,81,0.44);
@@ -92,10 +95,15 @@
 
             .youtube-playlist {
                 width: 250px;
+                
                 .recent-upload-list {
+                    align-items: center;
+
                     .video-container-wrapper {
+
                         .video-container {
                             width: 200px;
+                            
                             img {
                                 width: 150px;
                                 height: 100%;
@@ -109,6 +117,79 @@
 }
 
 @media screen and (max-width: 500px) {
+    .home-container {
+        margin: 5px;
+        display: grid;
+
+
+        .left-side {
+
+            .divider {
+                height: 50%;
+                width: 98vw;
+                margin: 5px;
+
+                .home-pic {
+                    height: 28.0vw;
+                    width: 27vw;
+                }
+
+                .home-pic img {
+                    width: 24vw;
+                }
+
+                .text-container {
+                    height: 50%;
+                    p {
+                        font-size: .9em;
+                    }
+                }
+            }
+        }
+
+        .right-side-home {
+            padding-top: 10px;
+            margin-right: 0px;
+            
+            .youtube-playlist {
+                justify-content: center;
+                width: 98vw;
+                margin: 5px;
+
+                .recent-upload-list {
+                    width: 90vw;
+                    display: grid;
+                    align-items: center;
+                    justify-content: center;
+
+                    .video-container-wrapper {
+                        width: 75vw;
+                        padding-top: 10px;
+                        display: grid;
+                        justify-content: center;
+                        align-items: center;
+
+                        .video-container {
+                            width: 75vw;
+                            margin: 0px;
+
+                            a .video-title {
+                                font-size: 16px;
+                            }
+
+                            img {
+                                width: 60vw;
+                            }
+
+
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
     .home-pic {
         width: 40vw;
         
@@ -217,10 +298,10 @@
 .dropdown-menu {
     margin-left: 5px;
     border: 2px solid cornflowerblue;
-    width: 50%;
+    width: 75%;
     
     .mobile-nav-link {
-        font-size: 1.6em;
+        font-size: 1.4em;
     
         a {
             font-family: sans-serif;
