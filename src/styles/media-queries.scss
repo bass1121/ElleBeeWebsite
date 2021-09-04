@@ -118,8 +118,8 @@
 
 @media screen and (max-width: 500px) {
     .home-container {
-        margin: 5px;
         display: grid;
+        margin: 0px;
 
 
         .left-side {
@@ -129,17 +129,21 @@
                 width: 98vw;
 
                 .home-pic {
-                    height: 28.0vw;
-                    width: 27vw;
+                    margin-left: 5px;
+                    height: 29vw;
+                    width: 28vw;
                 }
 
                 .home-pic img {
                     width: 24vw;
+                    margin-top: 7px;
                 }
 
                 .text-container {
                     height: 50%;
                     p {
+                        padding: 5px;
+                        margin: 0px;
                         font-size: .9em;
                     }
                 }
@@ -147,7 +151,6 @@
         }
 
         .right-side-home {
-            margin: 5vw;
             
             .youtube-playlist {
                 justify-content: center;
