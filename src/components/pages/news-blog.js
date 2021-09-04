@@ -10,9 +10,7 @@ export default function news() {
           <img src={ElleDrawing} alt="" />
         </div>
         <div className="blog-container-wrapper">
-          <div className="blog-page-title">
-            Latest Tea, Updates and Announcements
-          </div>
+          <div className="blog-page-title">News, Blog and Announcements</div>
         </div>
         <div className="dark-bee-wrapper">
           <img src={DarkBee} alt="" />

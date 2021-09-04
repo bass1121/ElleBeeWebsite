@@ -1,5 +1,6 @@
 .nav-component-wrapper {
     height: 117px;
+    width: 100vw;
 }
 
 .nav-wrapper {
@@ -24,7 +25,7 @@
     height: 85px;
     color: turquoise;
     filter: brightness(110%);
-    width: 100%;
+    width: 100vw(calc - 4px);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5, 0px 11px 13px rgba(25,67,81,0.44);
@@ -60,10 +61,7 @@ img.one-bee, .three-bee, .five-bee {
     font-size: 20px;
     height: 30px;
 
-    // .hamburger-toggle {
-    //     display: none;
-    // }
-
+ 
     .nav-link {
         display: block;
 

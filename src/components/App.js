@@ -66,26 +66,24 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <div className="app-nav-container">
-          <Router>
-            <div className="nav-component-wrapper">
-              <NavComponent />
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/about-me" component={About} />
-                <Route path="/news-blog" component={News} />
-                {/* <Route path="/support-links" component={Support} /> */}
-                <Route path="/members" component={Members} />
-                {/* <Route path="/merch" component={Merch} /> */}
-                <Route path="/login" component={Login} />
-                <Route path="/member-register" component={Login} />
-                <Route path="/user/:slug" component={AccountManagement} />
-                <Route component={NoMatch} />
-              </Switch>
-              {this.state.authenticated && <BottomNavbar />}
-            </div>
-          </Router>
-        </div>
+        <Router>
+          <div className="nav-component-wrapper">
+            <NavComponent />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/about-me" component={About} />
+              <Route path="/news-blog" component={News} />
+              {/* <Route path="/support-links" component={Support} /> */}
+              <Route path="/members" component={Members} />
+              {/* <Route path="/merch" component={Merch} /> */}
+              <Route path="/login" component={Login} />
+              <Route path="/member-register" component={Login} />
+              <Route path="/user/:slug" component={AccountManagement} />
+              <Route component={NoMatch} />
+            </Switch>
+            {this.state.authenticated && <BottomNavbar />}
+          </div>
+        </Router>
       </div>
     );
   }

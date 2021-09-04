@@ -4,6 +4,11 @@ body {
 };
 
 .container {
+    width: 100vw;
     display: grid;
     grid-template-columns: 1fr;
 }
+
+// div {
+//     max-width: calc(100vw - 4px);
+// }

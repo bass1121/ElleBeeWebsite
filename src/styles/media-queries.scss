@@ -127,7 +127,6 @@
             .divider {
                 height: 50%;
                 width: 98vw;
-                margin: 5px;
 
                 .home-pic {
                     height: 28.0vw;
@@ -388,7 +387,7 @@
         
         .about-pic {
             height: 250px;
-            
+            margin-right: 10px;
         }
 
         .about-text {
@@ -587,17 +586,31 @@
 @media screen and (max-width: 1245px) {
     .blog-page-wrapper {
         .blog-posts {
-           width: 490px; 
+           
         }
 
         .blog-header {
-            width: 800px;
-            
+            height: 30vh;
+            width: 68vw;
+
+            .drawing-wrapper {
+                img {
+                    height: 20vh;
+                }
+            }
+
             .blog-container-wrapper {
                 .blog-page-title {
-                    font-size: 2.7em;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.8em;
                     font-weight: 800;
                 }
+            }
+
+            .dark-bee-wrapper img {
+                height: 13vh;
             }
         }
     }
@@ -619,35 +632,26 @@
                 align-items: center;
                 justify-content: center;
                 .blog-page-title {
-                    font-size: 3em;
+                    font-size: 1.5em;
                 }
             }
         }
     }
 }
 
-@media screen and (max-width: 750px) {
-    .blog-posts-wrapper {
-        .blog-posts {
-            width: 375px;
-            height: 400px;
-        }
 
-        .blog-header {
-            .blog-container-wrapper {
-                .blog-page-title {
-                    font-size: 2.2em;
-                }
-            }
-        }
-    }
-}
 
 @media screen and (max-width: 720px) {
     .blog-page-wrapper {
         align-items: center;
         .blog-header {
-            width: 375px;
+            width: 90vw;
+            display: flex;
+            flex-direction: column;
+
+            .img {
+            }
+
             .drawing-wrapper img{
                 display: none;
             }
@@ -655,8 +659,8 @@
             .blog-container-wrapper {
                 .blog-page-title {
                     font-size: 1.8em;
-                    width: 220px;
-                    margin-left: 30px;
+                    margin-left: 20px;
+                    margin-right: 20px;
                 }
 
             }
@@ -665,10 +669,14 @@
         .blog-post-wrapper {
             .blog-posts {
                 padding-right: 5px;
-                width: 365px;
-                
+                width: 85vw;
+
                 .blog-title {
                     font-size: 1.5em;
+                }
+
+                .blog-content {
+                    font-size: .6em;
                 }
             }
         }
