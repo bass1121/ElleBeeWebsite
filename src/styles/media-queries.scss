@@ -120,6 +120,7 @@
     .home-container {
         display: grid;
         margin: 0px;
+        justify-content: center;
 
 
         .left-side {
@@ -151,6 +152,7 @@
         }
 
         .right-side-home {
+            margin-right: 0px;
             
             .youtube-playlist {
                 justify-content: center;
