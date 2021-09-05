@@ -563,9 +563,11 @@
 
 @media screen and (max-width: 500px) {
     .member-info-wrapper {
-        width: 91vw;
-        height: 90vh;
-        margin: 20px;
+        width: 94vw;
+        height: 80vh;
+        margin: 5px;
+        display: flex;
+        align-items: center;
 
         .member-info-input {
             display: flex;
