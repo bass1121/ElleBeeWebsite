@@ -126,18 +126,20 @@
         .left-side {
 
             .divider {
-                height: 50%;
+                height: 100%;
                 width: 98vw;
 
                 .home-pic {
-                    margin-left: 5px;
-                    height: 29vw;
-                    width: 28vw;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 10px;
                 }
 
                 .home-pic img {
-                    width: 24vw;
+                    width: 65vw;
                     margin-top: 7px;
+                    margin-right: 0px;
                 }
 
                 .text-container {
@@ -192,11 +194,6 @@
             }
 
         }
-    }
-
-    .home-pic {
-        width: 40vw;
-        
     }
     
     .divider {
@@ -362,11 +359,9 @@
     .about-container {
         margin-top: 0px;
         padding: 5px;
-        
-        
-        .about-pic {
-            height: 200px;
-            
+
+        .about-image-container img {
+            height: 47vh;
         }
 
         .about-text {
@@ -386,13 +381,18 @@
 @media screen and (max-width: 500px) {
     .about-container {
         margin-top: 0px;
-        display: block;
         padding: 5px;
+        display: flex;
+        flex-direction: column;
         
-        
-        .about-pic {
-            height: 250px;
-            margin-right: 10px;
+        .about-image-container {
+            display: flex;
+            justify-content: center;
+            
+            img {
+                height: 46vh;
+                border: 10px solid cornflowerblue;
+            }   
         }
 
         .about-text {
@@ -441,10 +441,12 @@
         flex-direction: column;
         
         .drawing-wrapper {
-            height: 125px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
 
             img {
-                height: 150px;
+                height: 38vh;
             }
         }
 
@@ -459,16 +461,21 @@
                 }
 
                 .login-form-wrapper {
+                    align-items: center;
                     justify-content: center;
+                    
                     .login-field{
+                        
                         label {
                         }
+                        
                         input {
-                            width: 300px;
+                            width: 85vw;
                             font-family: sans-serif;
                             font-size: 30px
                         }
                     }
+
                     .login-button-wrapper {
                         display: flex;
                         flex-direction: column;
